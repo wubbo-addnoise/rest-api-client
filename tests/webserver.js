@@ -21,15 +21,13 @@ http.createServer(function (req, res) {
     } else if (m = req.url.match(/\/objects\/(\d+)$/)) {
         result = {
             "success": "true",
-            "object": [
-                {
-                    "id": m[1],
-                    "name": "Object " + m[1],
-                    "type": "Object type"
-                }
-            ]
+            "object": {
+                "id": m[1],
+                "name": "Object " + m[1],
+                "type": "Object type"
+            }
         };
-    } else if (req.url.match(/\/objects\/(\d+)$\/attributes/)) {
+    } else if (req.url.match(/\/objects\/(\d+)\/attributes/)) {
         result = {
             "success": "true",
             "attributes": [
